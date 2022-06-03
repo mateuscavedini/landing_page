@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+
+    <!-- STYLE -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header class="flex-center column">
+        <div class="header-wrapper">
+            <div class="checkbox-container flex-center">
+                <div class="checkbox-wrapper">
+                    <input type="checkbox" id="toggle">
+                    <label for="toggle" class="checkbox flex-center">
+                        <div class="trace"></div>
+                        <div class="trace"></div>
+                        <div class="trace"></div>
+                    </label>
+                    <div class="menu"></div>
+                    <nav class="flex-center">
+                        <ul>
+                            <li><a href="#">HOME</a></li>
+                            <li><a href="#">PROJETOS</a></li>
+                            <li><a href="#">SOBRE</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <h1>Mateus Cavedini Pereira</h1>
+        <h2>Full-stack Developer</h2>
+        <address>
+            <a href="#" class="flex-center">LinkedIn</a>
+            <a href="https://github.com/mateuscavedini" target="_blank" class="flex-center">GitHub</a>
+        </address>
+    </header>
+
+    <main class="flex-evenly column">
+        <article class="flex-evenly">
+            <div class="card-text">
+                <p>Procuro diariamente o aprimoramento através da realização de projetos, adicionando-os sempre que possível ao meu <a href="https://github.com/mateuscavedini" target="_blank">GitHub</a>. Encorajo que acompanhem minha evolução, apresentem críticas e que conectem-se comigo! Meus últimos projetos foram um cronômetro simples - trabalhando com o tempo dentro do JavaScript; uma calculadora simples - com o desafio de replicar seu comportamento real e de trabalhar com as operações matemáticas básicas dentro do JavaScript; e, por fim, esta página - com o objetivo de estudar um pouco sobre animações e responsividade com o CSS3.</p>
+            </div>
+            <div class="card-wrapper flex-center">
+                <div class="card flex-center column">
+                    <h2>GitHub</h2>
+                    <p>Veja meus projetos</p>
+                </div>
+            </div>
+        </article>
+        <article class="flex-evenly">
+            <div class="card-wrapper flex-center">
+                <div class="card flex-center column">
+                    <h2>LinkedIn</h2>
+                    <p>Conecte-se comigo</p>
+                </div>
+            </div>
+            <div class="card-text">
+                <p>Reconheço a grande importância de um bom networking e do contato com outros profissionais, tanto dessa área quanto de outras, e também a necessidade de me tornar mais ativo. Portanto, encorajo que entrem em contato e conectem-se <a href="#" target="_blank">comigo!</a></p>
+            </div>
+        </article>
+        <article class="flex-evenly">
+            <div class="card-text">
+                <p>Com minha graduação em Engenharia Ambiental e Sanitária finalizada em 2021, enfrentei uma difícil decisão que resultou no meu atual objetivo de transição de carreira. Desde então, venho estudando e me esforçando cada vez mais para expandir minhas habilidades em programação e, dessa forma, atingir meu objetivo. Atualmente, minhas habilidades se restringem ao HTML5, CSS3 e JavaScript, porém, almejo estudar outras linguagens, como Java, e FrameWorks, como ReactJS.</p>
+            </div>
+            <div class="card-wrapper flex-center">
+                <div class="card flex-center column">
+                    <h2>Sobre mim</h2>
+                    <p>Conheça minha trajetória</p>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer class="flex-center">
+        <p>Mateus Cavedini Pereira</p>
+    </footer>
+
+    <script>
+        const body = document.querySelector("body")
+        const checkbox = document.querySelector("input")
+        
+        // toggle scroll when menu is opened/closed
+        checkbox.addEventListener("change", () => {
+            console.log(checkbox.checked)
+            if (checkbox.checked) {
+                body.style.overflowY = "scroll"
+                return body.style.position = "fixed"
+            }
+            body.style.overflowY = "auto"
+            return body.style.position = "static"
+        })
+    </script>
+</body>
+</html>
