@@ -7,10 +7,6 @@ body {
     color: black;
 
     /* COLOR VARIABLES */
-    /* --color-a: #050404;
-    --color-b: #2e1c2b;
-    --color-c: #4a1942;
-    --color-d: #893168; */
     --color-a: #c86d95;
     --color-b: #f0c5df;
     --color-c: #8ce6ee;
@@ -21,7 +17,7 @@ body {
     --color-d: #c2a98a; */
 }
 
-/* CLASSES AND IDS */
+/* GENERAL */
 .flex-center {
     display: flex;
     justify-content: center;
@@ -92,7 +88,7 @@ address a:hover {
     }
 }
 
-/* HAMBURGER */
+/* HAMBURGER MENU */
 .checkbox {
     height: 100px;
     width: 100px;
@@ -246,6 +242,17 @@ article {
     text-align: justify;
 }
 
+.card-text p a {
+    color: black;
+    font-weight: bold;
+    border-bottom: 1px solid transparent;
+    transition: 0.35s ease-in-out;
+}
+
+.card-text p a:hover {
+    border-bottom: 1px solid black;
+}
+
 .card {
     text-align: center;
     position: relative;
@@ -295,4 +302,43 @@ footer {
     height: 100px;
     width: 100%;
     background-color: var(--color-b);
+}
+
+/* RESPONSIVENESS */
+@media (max-width: 800px) {
+    header h1, header h2 {
+        text-align: center;
+    }
+    
+    address {
+        display: flex;
+        flex-direction: column;
+    }
+
+    main {
+        margin-top: 0;
+    }
+
+    article {
+        flex-direction: column;
+    }
+
+    article:nth-child(1), article:nth-child(3) {
+        flex-direction: column-reverse;
+    }
+
+    .card-wrapper {
+        height: 250px;
+        width: 250px;
+    }
+
+    .card-wrapper:hover > .card::before {
+        height: 190px;
+        width: 190px;
+    }
+
+    .card-text {
+        width: 90%;
+        text-align: justify;
+    }
 }

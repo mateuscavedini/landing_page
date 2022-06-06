@@ -29,9 +29,8 @@
                     <div class="menu"></div>
                     <nav class="flex-center">
                         <ul>
-                            <li><a href="#">HOME</a></li>
-                            <li><a href="#">PROJETOS</a></li>
-                            <li><a href="#">SOBRE</a></li>
+                            <li><a href="#github" class="menu-link">PROJETOS</a></li>
+                            <li><a href="#about" class="menu-link">SOBRE</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -40,13 +39,13 @@
         <h1>Mateus Cavedini Pereira</h1>
         <h2>Full-stack Developer</h2>
         <address>
-            <a href="#" class="flex-center">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/mateus-cavedini-pereira-4292691a2" target="_blank" class="flex-center">LinkedIn</a>
             <a href="https://github.com/mateuscavedini" target="_blank" class="flex-center">GitHub</a>
         </address>
     </header>
 
     <main class="flex-evenly column">
-        <article class="flex-evenly">
+        <article class="flex-evenly" id="github">
             <div class="card-text">
                 <p>Procuro diariamente o aprimoramento através da realização de projetos, adicionando-os sempre que possível ao meu <a href="https://github.com/mateuscavedini" target="_blank">GitHub</a>. Encorajo que acompanhem minha evolução, apresentem críticas e que conectem-se comigo! Meus últimos projetos foram um cronômetro simples - trabalhando com o tempo dentro do JavaScript; uma calculadora simples - com o desafio de replicar seu comportamento real e de trabalhar com as operações matemáticas básicas dentro do JavaScript; e, por fim, esta página - com o objetivo de estudar um pouco sobre animações e responsividade com o CSS3.</p>
             </div>
@@ -65,10 +64,10 @@
                 </div>
             </div>
             <div class="card-text">
-                <p>Reconheço a grande importância de um bom networking e do contato com outros profissionais, tanto dessa área quanto de outras, e também a necessidade de me tornar mais ativo. Portanto, encorajo que entrem em contato e conectem-se <a href="#" target="_blank">comigo!</a></p>
+                <p>Reconheço a grande importância de um bom networking e do contato com outros profissionais, tanto dessa área quanto de outras, e também a necessidade de me tornar mais ativo. Portanto, encorajo que entrem em contato e conectem-se <a href="https://www.linkedin.com/in/mateus-cavedini-pereira-4292691a2" target="_blank">comigo!</a></p>
             </div>
         </article>
-        <article class="flex-evenly">
+        <article class="flex-evenly" id="about">
             <div class="card-text">
                 <p>Com minha graduação em Engenharia Ambiental e Sanitária finalizada em 2021, enfrentei uma difícil decisão que resultou no meu atual objetivo de transição de carreira. Desde então, venho estudando e me esforçando cada vez mais para expandir minhas habilidades em programação e, dessa forma, atingir meu objetivo. Atualmente, minhas habilidades se restringem ao HTML5, CSS3 e JavaScript, porém, almejo estudar outras linguagens, como Java, e FrameWorks, como ReactJS.</p>
             </div>
@@ -90,14 +89,24 @@
         const checkbox = document.querySelector("input")
         
         // toggle scroll when menu is opened/closed
-        checkbox.addEventListener("change", () => {
-            console.log(checkbox.checked)
+        function toggleCheckbox() {
             if (checkbox.checked) {
                 body.style.overflowY = "scroll"
                 return body.style.position = "fixed"
             }
             body.style.overflowY = "auto"
             return body.style.position = "static"
+        }
+        
+        checkbox.addEventListener("change", toggleCheckbox)
+
+        const menu = document.querySelectorAll(".menu-link")
+
+        menu.forEach((item) => {
+            item.addEventListener("click", () => {
+                checkbox.checked = false
+                toggleCheckbox()
+            })
         })
     </script>
 </body>
